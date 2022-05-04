@@ -35,7 +35,7 @@
  *
  * @return Returns the mean of the given input values in array
  */
-unsigned char find_mean(unsigned char *ptr, unsigned int size);
+double find_mean(unsigned char *ptr, unsigned int size);
 
 /**
  * @brief Find the median of the given input set

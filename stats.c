@@ -23,15 +23,15 @@
 #include <stdio.h>
 #include "stats.h"
 
-unsigned char find_mean(unsigned char *ptr, unsigned int size)
+double find_mean(unsigned char *ptr, unsigned int size)
 {
   int sum = 0;
-  int mean = 0;
+  double mean = 0;
   for(int i = 0 ; i < size; i++)
   {
     sum += ptr[i];
   }
-  mean = sum/size;
+  mean = sum/(double)size;
   return mean;
 }
 
@@ -87,7 +87,7 @@ void sort_array(unsigned char *ptr, unsigned int size)
 void print_statistics(unsigned char *ptr, unsigned int size)
 {
   sort_array(ptr, size);
-  printf("Mean\t\t:%d\n",find_mean(ptr, size));
+  printf("Mean\t\t:%.2f\n",find_mean(ptr, size));
   printf("Median\t\t:%d\n",find_median(ptr, size));
   printf("Maximum\t\t:%d\n",find_maximum(ptr, size));
   printf("Minimum\t\t:%d\n",find_minimum(ptr, size));
