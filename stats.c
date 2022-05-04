@@ -9,20 +9,61 @@
  *
  *****************************************************************************/
 /**
- * @file <Add File Name> 
- * @brief <Add Brief Description Here >
+ * @file stats.c 
+ * @brief Main file to invoke the statistics of given array
  *
- * <Add Extended Description Here>
+ * This is the main file to invoke the function is print statistics of the 
+ * array and sorts the array from largest to smallest
  *
- * @author <Add FirsName LastName>
- * @date <Add date >
+ * @author <Prasanna Padmanaban>
+ * @date <05/04/2022>
  *
  */
 
-
-
 #include <stdio.h>
 #include "stats.h"
+
+unsigned char find_mean(unsigned char *ptr, unsigned int size)
+{
+  return 0;
+}
+
+unsigned char find_median(unsigned char *ptr, unsigned int size)
+{
+  return 0;
+}
+
+unsigned char find_maximum(unsigned char *ptr, unsigned int size)
+{
+  return 0;
+}
+
+unsigned char find_minimum(unsigned char *ptr, unsigned int size)
+{
+  return 0;
+}
+
+void print_array(unsigned char *ptr, unsigned int size)
+{
+  return;
+}
+
+void sort_array(unsigned char *ptr, unsigned int size)
+{
+  return;
+}
+
+void print_statistics(unsigned char *ptr, unsigned int size)
+{
+  printf("Mean\t\t:%d\n",find_mean(ptr, size));
+  printf("Median\t\t:%d\n",find_median(ptr, size));
+  printf("Maximum\t\t:%d\n",find_maximum(ptr, size));
+  printf("Minimum\t\t:%d\n",find_minimum(ptr, size));
+  print_array(ptr, size);
+  sort_array(ptr, size);
+  print_array(ptr,size);
+  return;
+}
 
 /* Size of the Data Set */
 #define SIZE (40)
@@ -37,7 +78,7 @@ void main() {
 
   /* Other Variable Declarations Go Here */
   /* Statistics and Printing Functions Go Here */
-
+  print_statistics(test, SIZE);
 }
 
 /* Add other Implementation File Code Here */
