@@ -25,43 +25,72 @@
 
 unsigned char find_mean(unsigned char *ptr, unsigned int size)
 {
-  return 0;
+  int sum = 0;
+  int mean = 0;
+  for(int i = 0 ; i < size; i++)
+  {
+    sum += ptr[i];
+  }
+  mean = sum/size;
+  return mean;
 }
 
 unsigned char find_median(unsigned char *ptr, unsigned int size)
 {
-  return 0;
+  int is_even = size%2;
+  int median = 0;
+  if(is_even)
+    median = (ptr[size/2] + ptr[size/2+1])/2.0; 
+  else
+    median = ptr[size/2 + 1];
+  return median;
 }
 
 unsigned char find_maximum(unsigned char *ptr, unsigned int size)
 {
-  return 0;
+  return ptr[0];
 }
 
 unsigned char find_minimum(unsigned char *ptr, unsigned int size)
 {
-  return 0;
+  return ptr[size-1];
 }
 
 void print_array(unsigned char *ptr, unsigned int size)
 {
+  for(int i = 0; i < size; i++)
+  {
+    printf("%d ", ptr[i]);
+  }
+  printf("\n");
   return;
 }
 
 void sort_array(unsigned char *ptr, unsigned int size)
 {
+  for(int i = 0; i < size; i++)
+  {
+    for (int j = i+1 ; j < size; j++)
+    {
+      if(ptr[j] > ptr[i])
+      {
+        int temp = 0;
+        temp = ptr[i];
+        ptr[i] = ptr[j];
+        ptr[j] = temp;
+      }
+    }
+  }
   return;
 }
 
 void print_statistics(unsigned char *ptr, unsigned int size)
 {
+  sort_array(ptr, size);
   printf("Mean\t\t:%d\n",find_mean(ptr, size));
   printf("Median\t\t:%d\n",find_median(ptr, size));
   printf("Maximum\t\t:%d\n",find_maximum(ptr, size));
   printf("Minimum\t\t:%d\n",find_minimum(ptr, size));
-  print_array(ptr, size);
-  sort_array(ptr, size);
-  print_array(ptr,size);
   return;
 }
 
